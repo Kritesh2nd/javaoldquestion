@@ -17,6 +17,7 @@
         </form>
         <%
         List<User> userlist = (List<User>) request.getAttribute("userlist");
+        if(userlist!=null){
         %>
         <h1>Read</h1>
         <table>
@@ -41,6 +42,7 @@
             </tr>
             <%}%>
         </table>
+        <%}%>
         <h1>Update</h1>
         <form action="user?page=register" method="post">
             Id <input type="text" value="Kritesh" name="id"><br/>
