@@ -20,6 +20,7 @@
         if(userlist!=null){
         %>
         <h1>Read</h1>
+        <a href="user?page=read">Read</a>
         <table>
             <tr>
                 <td>Id</td>
@@ -44,8 +45,8 @@
         </table>
         <%}%>
         <h1>Update</h1>
-        <form action="user?page=register" method="post">
-            Id <input type="text" value="Kritesh" name="id"><br/>
+        <form action="user?page=update" method="post">
+            Id <input type="text" value="1" name="id"><br/>
             Name <input type="text" value="Kritesh" name="name"><br/>
             Username <input type="text" value="kritesh" name="username"><br/>
             Password <input type="text" value="pass1234" name="password"><br/>
@@ -62,7 +63,7 @@ create database mydb;
 use mydb;
 create table userinfo(
 id int primary key auto_increment,
-firstname varchar(255),
+fullname varchar(255),
 username varchar(255),
 password varchar(255)
 );

@@ -38,7 +38,8 @@ public class Service {
         return userlist;
     }
     public void update(User u){
-        String query = "update userinfo set fullname=?,username=?,password=? where id=?";
+        String query = "update userinfo set fullname=?, username=?, password=? where id=?";
+        
         PreparedStatement ps = new DBConnection().getStatement(query);
         try{
             ps.setString(1,u.getName());
@@ -48,6 +49,7 @@ public class Service {
             ps.execute();
         }
         catch (SQLException e){
+            System.out.println("ERROR "+e);
             e.printStackTrace();
         }
     }
@@ -61,5 +63,14 @@ public class Service {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+    public static void main(String[] args) {
+        Service s = new Service();
+        User u = new User();
+        u.setId(1);
+        u.setName("nnn");
+        u.setPassword("ppp");
+        u.setUsername("u");
+        s.update(u);
     }
 }

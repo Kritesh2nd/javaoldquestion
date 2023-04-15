@@ -21,10 +21,13 @@ public class Controller extends HttpServlet {
                 user.setUsername(request.getParameter("username"));
                 user.setPassword(request.getParameter("password"));
                 new Service().create(user);
+                out.print("create");
             }
             catch(Exception e){
                 out.print(e);
             }
+        }
+        else if(page.equals("read")){
         }
         else if(page.equals("update")){
             User user = new User();
@@ -38,6 +41,7 @@ public class Controller extends HttpServlet {
             int id = Integer.parseInt(request.getParameter("id"));
             new Service().delete(id);
         }
+        
         List<User> userlist = new Service().read();
         request.setAttribute("userlist", userlist);
         RequestDispatcher rd = request.getRequestDispatcher("index.jsp");

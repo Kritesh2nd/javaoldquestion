@@ -7,7 +7,6 @@ public class DBConnection{
             Class.forName("com.mysql.jdbc.Driver");
             String dbUrl = "jdbc:mysql://localhost:3306/mydb";
             con = DriverManager.getConnection(dbUrl, "root", "");
-            System.out.println("DB connnected");
         }
         catch (SQLException | ClassNotFoundException e){
             e.printStackTrace();
